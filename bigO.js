@@ -78,7 +78,7 @@ function funChallenge(input) {
   // and only the final o(n) was placed.
   
   // =====================
-  // rule 3 different terms for inputs
+  // RULE 3 different terms for inputs
   
   function compressBoxesTwice(boxes, boxes2){
     boxes.forEach(function(boxes){
@@ -92,6 +92,42 @@ function funChallenge(input) {
   
   /*
   In this case there are two different functions.
-  Since the second one is boxes2 not only boxes as the preview example of O(n) here the BIG O is O(a + b)
-  
+  Since the second one is boxes2 not only boxes as
+  the preview example of O(n) here the BIG O is O(a + b)
   */ 
+
+  // log all pairs of array
+const boxes = [1,2,3,4,5];
+
+function logAllPairsOfArray(array){
+  for (let i=0; i < array.length; i++){
+    for (let j=0; j < array.length; j++){
+      console.log(i, j);
+    }
+  }
+}
+logAllPairsOfArray(boxes);
+
+/*
+In this situation, there are two for loops
+Therefore, one inside another. Which can be seen as a multiplication.
+
+As O(a + b) or O(n^2)
+*/ 
+
+function logAllPairsOfBoxes(boxes){
+  boxes.forEach(function(firstBox){
+    boxes.forEach(function(secondBox){
+      console.log(firstBox, secondBox);
+    });
+  });
+}
+
+logAllPairsOfBoxes(boxes);
+
+/*
+the same for this situation here:
+
+As O(a + b) or O(n^2) Quadratic time...
+*/
+
