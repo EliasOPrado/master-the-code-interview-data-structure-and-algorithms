@@ -131,3 +131,30 @@ the same for this situation here:
 As O(a + b) or O(n^2) Quadratic time...
 */
 
+// ===============================================
+
+// Rule 4 Drop non dominant
+
+function printAllNumbersThenAllPairSum(numbers){
+
+    console.log('these are the numbers');
+    numbers.forEach(function(number){
+      console.log(number);
+    });
+  
+    console.log('and these are their sums');
+    numbers.forEach(function(firstNumber){
+      numbers.forEach(function(secondNumber){
+        console.log(firstNumber + secondNumber)
+      });
+    });
+  }
+  
+  printAllNumbersThenAllPairSum([1,2,3,4,5]);
+  
+  // O(n + n^2) ===>> O(n^2)
+  /*
+  Following the rule 4 that tells to
+  drop the non dominant. The linear big o notation will be dropped. as n + n will be n anyways. 
+  */
+
